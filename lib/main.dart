@@ -5,6 +5,8 @@ void main() {
   runApp(const MyApp());
 }
 
+const Color primaryColor = Color(0xFF00AAA0);
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,8 +16,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          primary: primaryColor,
+        ),
+        useMaterial3: true,
       ),
       home: MainScreen(),
     );
