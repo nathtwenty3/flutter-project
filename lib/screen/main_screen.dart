@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pro_23/screen/home/home_screen.dart';
+import 'package:pro_23/screen/post/post_list_screen.dart';
 import 'package:pro_23/screen/post/post_screen.dart';
 import 'package:pro_23/screen/setting/setting_screen.dart';
 import 'package:pro_23/screen/user/user_screen.dart';
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
-        children: [HomeScreen(), PostScreen(), UserScreen(), SettingScreen()],
+        children: [HomeScreen(), PostListScreenScreen(), UserScreen(), SettingScreen()],
       ),
       bottomNavigationBar: NavigationBar(
         //selectedIndex: currentIndex,
