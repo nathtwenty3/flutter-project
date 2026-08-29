@@ -4,7 +4,9 @@ import 'package:pro_23/model/slider_model.dart';
 
 class HomeController extends GetxController {
   final banners = <SliderModel>[].obs;
+
   final latestPosts = <PostModel>[].obs;
+
   final isLoading = false.obs;
 
   @override
