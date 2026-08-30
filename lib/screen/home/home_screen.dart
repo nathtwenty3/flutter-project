@@ -1,51 +1,17 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import 'package:pro_23/model/post_model.dart';
-import 'package:pro_23/model/slider_model.dart';
-import 'package:pro_23/controller/home_controller.dart';
 import 'package:get/get.dart';
-
+import 'package:pro_23/controller/home_controller.dart';
 import '../../main.dart';
+
+import 'package:pro_23/model/slider_model.dart';
+import 'package:pro_23/model/post_model.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final List<SliderModel> banners = <SliderModel>[
-    //   SliderModel(
-    //     title: 'Welcome to GetX Basic',
-    //     subtitle: 'Learn Flutter with GetX',
-    //     imageUrl: 'https://picsum.photos/800/400?random=1',
-    //   ),
-    //   SliderModel(
-    //     title: 'Flutter Development',
-    //     subtitle: 'Build modern mobile applications',
-    //     imageUrl: 'https://picsum.photos/800/400?random=2',
-    //   ),
-    //   SliderModel(
-    //     title: 'GetX State Management',
-    //     subtitle: 'Simple and powerful state management',
-    //     imageUrl: 'https://picsum.photos/800/400?random=3',
-    //   ),
-    // ];
-    //
-    // final List<PostModel> latestPosts = <PostModel>[
-    //   PostModel(
-    //     title: 'Getting Started with Flutter',
-    //     imageUrl: 'https://picsum.photos/200/200?random=10',
-    //   ),
-    //   PostModel(
-    //     title: 'Understanding GetX',
-    //     imageUrl: 'https://picsum.photos/200/200?random=11',
-    //   ),
-    //   PostModel(
-    //     title: 'Flutter Navigation',
-    //     imageUrl: 'https://picsum.photos/200/200?random=12',
-    //   ),
-    // ];
-
     final HomeController controller = Get.put(HomeController());
 
     return Scaffold(
@@ -119,8 +85,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Obx(() {
-          if (controller.isLoading.value)
+          // =========================
+          // Loading
+          // =========================
+          if (controller.isLoading.value) {
             return const Center(child: CircularProgressIndicator());
+          }
 
           return ListView(
             padding: const EdgeInsets.only(bottom: 20, top: 20),
@@ -227,10 +197,13 @@ class HomeScreen extends StatelessWidget {
               // Latest Posts Title
               // =========================
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  'Latest Posts',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  'Latest Posts'.tr,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
 
