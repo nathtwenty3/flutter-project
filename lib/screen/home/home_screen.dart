@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: Text('home'.tr),
         centerTitle: true,
         titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
         backgroundColor: primaryColor,
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(color: primaryColor),
-              accountName: Text("Neng Phanath"),
+              accountName: Text("Neng Phanath".tr),
               accountEmail: Text(
                 "nath@example.com",
                 style: TextStyle(color: Colors.white70),
@@ -46,26 +46,36 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(leading: Icon(Icons.person_outline), title: Text('Users')),
+            ListTile(
+              leading: Icon(Icons.person_outline),
+              title: Text('users'.tr),
+            ),
             ListTile(
               leading: Icon(Icons.person_add_alt_outlined),
-              title: Text('New user'),
+              title: Text('new_user'.tr),
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.translate),
-              title: Text('Language'),
+              title: Text('language'.tr),
               trailing: Text(
-                'English',
+                'english'.tr,
                 style: TextStyle(
                   color: primaryColor,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              onTap: () {
+                if (Get.locale?.languageCode == 'en') {
+                  Get.updateLocale(Locale('km', 'en'));
+                } else {
+                  Get.updateLocale(Locale('en', 'US'));
+                }
+              },
             ),
             ListTile(
               leading: Icon(Icons.signal_cellular_alt),
-              title: Text('Connection'),
+              title: Text('connection'.tr),
               trailing: Text(
                 'Online',
                 style: TextStyle(
@@ -78,7 +88,7 @@ class HomeScreen extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.red),
-              title: Text('Logout', style: TextStyle(color: Colors.red)),
+              title: Text('logout'.tr, style: TextStyle(color: Colors.red)),
             ),
           ],
         ),
@@ -199,7 +209,7 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  'Latest Posts'.tr,
+                  'latest_posts'.tr,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

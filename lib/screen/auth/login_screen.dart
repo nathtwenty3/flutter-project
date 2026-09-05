@@ -11,12 +11,22 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login Screen')),
       body: Center(
-        child: Text(
-          'Login Screen',
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
+        child:
+            // Text(
+            //   'Login Screen',
+            //   style: Theme.of(context).textTheme.headlineMedium,
+            // ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/');
+              },
+              child: Text('Login'),
+            ),
       ),
     );
   }

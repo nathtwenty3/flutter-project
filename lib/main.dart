@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pro_23/app_translations.dart';
 import 'package:pro_23/screen/auth/login_screen.dart';
 import 'package:pro_23/screen/main_screen.dart';
+import 'package:pro_23/screen/post/post_form_screen.dart';
+import 'package:pro_23/screen/post/post_list_screen.dart';
 import 'package:pro_23/screen/post/post_screen.dart';
 
 void main() {
@@ -18,6 +21,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'US'),
+      translations: AppTranslations(),
+      // Your translations
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
@@ -29,9 +36,10 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/', page: () => const MainScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
-        GetPage(name: '/post', page: () => const PostScreen()),
+        GetPage(name: '/list_post', page: () => const PostListScreenScreen()),
+        GetPage(name: '/post_form', page: () => const PostFormScreen()),
       ],
-      initialRoute: '/login',
+      initialRoute: '/',
     );
   }
 }

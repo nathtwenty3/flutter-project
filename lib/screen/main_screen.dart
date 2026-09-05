@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get.dart';
+import 'package:get/get.dart';
+import 'package:get/get.dart';
 import 'package:pro_23/main.dart';
 import 'package:pro_23/screen/home/home_screen.dart';
 import 'package:pro_23/screen/post/post_list_screen.dart';
@@ -21,7 +25,12 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
-        children: [HomeScreen(), PostListScreenScreen(), UserScreen(), SettingScreen()],
+        children: [
+          HomeScreen(),
+          PostListScreenScreen(),
+          UserScreen(),
+          SettingScreen(),
+        ],
       ),
 
       bottomNavigationBar: NavigationBar(
@@ -37,22 +46,22 @@ class _MainScreenState extends State<MainScreen> {
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
             selectedIcon: Icon(Icons.home, color: primaryColor),
-            label: 'Home',
+            label: 'home'.tr,
           ),
           NavigationDestination(
             icon: Icon(Icons.article_outlined),
             selectedIcon: Icon(Icons.article, color: primaryColor),
-            label: 'Post',
+            label: 'post'.tr,
           ),
           NavigationDestination(
             icon: Icon(Icons.person_2_outlined),
             selectedIcon: Icon(Icons.person, color: primaryColor),
-            label: 'User',
+            label: 'users'.tr,
           ),
           NavigationDestination(
             icon: Icon(Icons.settings_outlined),
             selectedIcon: Icon(Icons.settings, color: primaryColor),
-            label: 'Setting',
+            label: 'settings'.tr,
           ),
         ],
       ),
